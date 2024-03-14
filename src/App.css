@@ -1,0 +1,8 @@
+#cart-widget > img{
+  width: 30px;
+}
+#cart-widget > span{
+  color: black;
+  padding-left: 1rem;
+  font-weight: 900;
+}
