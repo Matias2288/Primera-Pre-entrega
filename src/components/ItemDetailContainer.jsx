@@ -1,30 +1,28 @@
 import {useEffect, useState} from "react";
-
-import Container from 'react-bootstrap/Container';
 import { useParams } from "react-router-dom";
-import data from "../data/products.json";
+import { getFirestore, getDoc, doc, } from "firebase/firestore";
+
+import { ItemDetail } from "./ItemDetail";
+
 
 export const ItemDetailContainer = () => {
 const [product, setProduct] = useState(null)
 
 const { id } = useParams();
-useEffect(() => {
-    const get = new Promise((resolve, reject) => {
-        setTimeout(() => resolve(data), 2000);
-    });
 
-    get.then((data) => {
-        const filter = data.find((p) => p.id === Number(id) )
-        setProduct(filter);
-    })
+useEffect(() => {
+    const db = getFirestore();
+
+    const refDoc = doc(db, "Items", id);
+
+    getDoc(refDoc).then((snapshot) => {
+        setProduct({ id: snapshot.id, ...snapshot.data() });
+     });
 }, [id]);
 
 if(!product) return <div>loading</div>;
 
 return( 
-    <Container className='mt-4'>
-    <h1>{product.title}</h1>
-    <img src={product.pictureUrl} alt="img"/>
-    </Container>
+        <ItemDetail product={product}/>
     );
 };

@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import cart from '../assets/cart.png'
 
 export const CartWidget = () => {
     return (
-    <div id='cart-widget'>
-    <img src={cart} alt="Cart" className='carrito' />
+   <Link to="/cart">
+    <img src={cart} alt="Almacen Carlitos" height={25} />
     <span>42</span>
-    </div>
+    </Link>
     )
 }

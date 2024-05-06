@@ -3,8 +3,9 @@
     "id": 1,
     "title": "Fideos",
     "description": "Riquisimos fideos pirulito",
-    "category": "alimentos",
     "price": "$1500",
+    "category": "alimentos",
+    "stock": "7",
     "pictureUrl": "https://www.shutterstock.com/image-photo/spaghetti-pasta-transparent-plastic-bag-260nw-1425684992.jpg"
 },
 {
@@ -13,6 +14,7 @@
     "description": "Gaseosa coca cola",
     "price": "$2000",
     "category": "bebidas",
+    "stock": "10",
     "pictureUrl": "https://media.istockphoto.com/id/499208007/es/foto/coca-cola-cl%C3%A1sica-en-un-frasco-de-vidrio.jpg?s=612x612&w=0&k=20&c=4n-_VfFOTAzahIon4E6jCcd26-gs01in17JKbDQ2PTg="
 },
 {
@@ -21,6 +23,7 @@
     "description": "Increible shampoo para cabellos sin cabello",
     "price": "$1000",
     "category": "limpieza",
+    "stock": "3",
     "pictureUrl": "https://previews.123rf.com/images/eutoch/eutoch0704/eutoch070400023/876016-champ%C3%BA-y-acondicionador-de-color-verde-en-las-botellas-aislados-sin-recortar-camino-inluded.jpg"
 }
 
