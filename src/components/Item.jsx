@@ -11,7 +11,7 @@ export const Item = ({product}) => (
   <Card.Text>{product.price}</Card.Text>
   <Card.Text>{product.categoryId}</Card.Text>
   <Link to={`/Item/${product.id}`}>
-    <Button variant="primary">Comprar</Button>
+    <Button className="BotonCompra" variant="primary">Comprar</Button>
     </Link>
 </Card.Body>
 </Card>

@@ -13,10 +13,24 @@ export const Provider = ({ children }) => {
     };
 
     const addItem = (Item, quantity) => {
-       setItems([...Items, {Item, quantity}]);
-    };
+        const isExist = Items.some((I) => I.id === Item.id);
 
-    console.log(Items);
+        if(isExist){
+            const updateItems = Items.map(I => {
+                if(I.id === Item.id){
+                    return {
+                        ...I, 
+                        quantity: I.quantity + quantity,
+                    };
+                }else{
+                    return I;
+                }
+            });
+            setItems(updateItems);
+        }else {
+            setItems([...Items, { ...Item, quantity }]);
+        }      
+    };
 
     return (
     <CartContext.Provider value={{addItem,clear, Items, removeItem}}>
@@ -25,5 +39,3 @@ export const Provider = ({ children }) => {
     );
 };
 
-
-                                    // Seguir mirando el after 3 por el minuto 30:54
